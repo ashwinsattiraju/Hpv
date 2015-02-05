@@ -1,6 +1,7 @@
- # import required modules
+# importing required modules
+import netCDFAPI
 
- # main function definition
+# main function definition
 def main():
     # define the variable 'current_time' as a tuple of time.localtime()
     current_time = time.localtime() 
