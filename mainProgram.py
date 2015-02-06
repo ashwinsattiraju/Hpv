@@ -13,14 +13,14 @@ def main():
 	# read arguments and load file name
 	readArguments()
 	#initialize input choice to empty
-	input_choice = ''
+	inputChoice = ''
 	while(True):
 		# display options list in API
 		displyOptions()
 		# read user input
-		input_choice = raw_input(constants.S_ENTER_NOTE)
+		inputChoice = raw_input(constants.S_ENTER_NOTE)
 		# execute specific function
-		executeOption(input_choice)
+		executeOption(inputChoice)
 
 # function to disply options to user
 def displyOptions():
