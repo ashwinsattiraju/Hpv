@@ -1,5 +1,5 @@
 # importing required modules
-import netCDFAPI as api
+import netCDFapis as api
 import sys,getopt as options
 import constants as constants
 
@@ -11,7 +11,7 @@ def main():
 	# print welcome note
 	print constants.S_WELCOME_NOTE
 	# read arguments and load file name
-	readArguments()
+	inputFileName = readArguments()
 	#initialize input choice to empty
 	inputChoice = ''
 	while(True):
@@ -43,27 +43,27 @@ def displyOptions():
 def executeOption(choice):
 	# execute api function based on choice
 	if choice == constants.N_OPTION_1:
-		print 'option 1'
+		api.ndims(inputFileName)
 	elif choice == constants.N_OPTION_2:
-		print 'option 2'
+		api.get_global_dim_names(inputFileName)
 	elif choice == constants.N_OPTION_3:
-		print 'option 2'
+		api.get_global_dim_lens(inputFileName)
 	elif choice == constants.N_OPTION_4:
-		print 'option 2'
+		api.nvars(inputFileName)
 	elif choice == constants.N_OPTION_5:
-		print 'option 2'
+		api.get_var_names(inputFileName)
 	elif choice == constants.N_OPTION_6:
-		print 'option 2'
+		api.get_var_dim_lens(inputFileName)
 	elif choice == constants.N_OPTION_7:
-		print 'option 2'
+		api.get_var_dim_names(inputFileName)
 	elif choice == constants.N_OPTION_8:
-		print 'option 2'
+		api.get_num_of_points(inputFileName)
 	elif choice == constants.N_OPTION_9:
-		print 'option 2'
+		api.get_num_of_Cells(inputFileName)
 	elif choice == constants.N_OPTION_10:
-		print 'option 2'
+		api.get_data(inputFileName)
 	elif choice == constants.N_OPTION_11:
-		print 'option 2'
+		api.plot_histogram(inputFileName)
 	elif choice == constants.S_QUIT_VAR:
 		print constants.S_GOODBYE_NOTE
 		sys.exit()
@@ -89,7 +89,7 @@ def readArguments():
 		elif opt == constants.S_INPUT_VAR:
 			inputFileName = arg
 	# print input file name     
-	print 'Input file is "', inputFileName,'"'
+	return inputFileName
 
 # if the function is the main function start executing 
 if __name__ == '__main__':    

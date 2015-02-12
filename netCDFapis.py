@@ -3,15 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #return the number of dimensions 
-def ndims():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+def ndims(fileName):
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	dimlen = len(dims)
  	print("No. of Dimensions: " + str(dimlen))
 
 #names of the dimensions 
 def get_global_dim_names():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	print ("Global dimensions name: ")
 	for gnames in dims:
@@ -19,7 +19,7 @@ def get_global_dim_names():
 
 # lengths of the dimensions
 def get_global_dim_lens():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	print ("Global dimensions length: ")
 	for gnames in dims:
@@ -27,14 +27,14 @@ def get_global_dim_lens():
 
 #number of variables 
 def nvars():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	vars = rootgrp.variables
 	varlen = len(vars)
 	print ("No. of Variables: "+ str(varlen))
 
 #names of  variable
 def get_var_names():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	for var in vars:
@@ -43,7 +43,7 @@ def get_var_names():
 
 #dimensions of the input variable 'var' 
 def get_var_dim_lens():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'lon'
@@ -54,7 +54,7 @@ def get_var_dim_lens():
 
 #names of the dimensions for the variable 'var' 
 def get_var_dim_names():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'tos'
@@ -65,7 +65,7 @@ def get_var_dim_names():
 
 #number of grid points that have the variable 'var' defined
 def get_num_of_points():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'lat'
@@ -77,7 +77,7 @@ def get_num_of_points():
 		
 # return the number of cells that have the variable 'var' defined
 def get_num_of_Cells():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'tos'
@@ -89,7 +89,7 @@ def get_num_of_Cells():
 
 #  return the data array for the variable 'var'
 def get_data():
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'tos'
@@ -98,7 +98,7 @@ def get_data():
 
 # plot the histogram of the variable 'var'
 def plot_histogram(): 
-	rootgrp = Dataset('tos_O1_2001-2002.nc','r')
+	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
 	var = 'lon'
