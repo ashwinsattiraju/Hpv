@@ -3,9 +3,6 @@ import netCDFapis as api
 import sys,getopt as options
 import constants as constants
 
-# inputfile name 
-inputFileName = ''
-
 # main function definition
 def main():
 	# print welcome note
@@ -14,13 +11,14 @@ def main():
 	inputFileName = readArguments()
 	#initialize input choice to empty
 	inputChoice = ''
+	print inputFileName
 	while(True):
 		# display options list in API
 		displyOptions()
 		# read user input
 		inputChoice = raw_input(constants.S_ENTER_NOTE)
 		# execute specific function
-		executeOption(inputChoice)
+		executeOption(inputChoice, inputFileName)
 
 # function to disply options to user
 def displyOptions():
@@ -40,7 +38,7 @@ def displyOptions():
 	print constants.S_QUIT_NOTE
 	
 # function to execute option
-def executeOption(choice):
+def executeOption(choice, inputFileName):
 	# execute api function based on choice
 	if choice == constants.N_OPTION_1:
 		api.ndims(inputFileName)

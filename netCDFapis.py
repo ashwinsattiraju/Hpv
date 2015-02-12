@@ -4,13 +4,14 @@ import matplotlib.pyplot as plt
 
 #return the number of dimensions 
 def ndims(fileName):
+	print fileName
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	dimlen = len(dims)
  	print("No. of Dimensions: " + str(dimlen))
 
 #names of the dimensions 
-def get_global_dim_names():
+def get_global_dim_names(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	print ("Global dimensions name: ")
@@ -18,7 +19,7 @@ def get_global_dim_names():
 		print gnames
 
 # lengths of the dimensions
-def get_global_dim_lens():
+def get_global_dim_lens(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	print ("Global dimensions length: ")
@@ -26,14 +27,14 @@ def get_global_dim_lens():
 		print ( str(gnames) + " : " + str(len(dims[gnames])) )
 
 #number of variables 
-def nvars():
+def nvars(fileName):
 	rootgrp = Dataset(fileName,'r')
 	vars = rootgrp.variables
 	varlen = len(vars)
 	print ("No. of Variables: "+ str(varlen))
 
 #names of  variable
-def get_var_names():
+def get_var_names(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -42,7 +43,7 @@ def get_var_names():
 	
 
 #dimensions of the input variable 'var' 
-def get_var_dim_lens():
+def get_var_dim_lens(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -53,7 +54,7 @@ def get_var_dim_lens():
 	print ("Dimensions of " + var + " : " + str(j))
 
 #names of the dimensions for the variable 'var' 
-def get_var_dim_names():
+def get_var_dim_names(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -64,7 +65,7 @@ def get_var_dim_names():
 
 
 #number of grid points that have the variable 'var' defined
-def get_num_of_points():
+def get_num_of_points(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -76,7 +77,7 @@ def get_num_of_points():
 	print "Number of Grid points: " , total
 		
 # return the number of cells that have the variable 'var' defined
-def get_num_of_Cells():
+def get_num_of_Cells(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -88,7 +89,7 @@ def get_num_of_Cells():
 	print "Number of Cells : " , total
 
 #  return the data array for the variable 'var'
-def get_data():
+def get_data(fileName):
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
@@ -97,7 +98,7 @@ def get_data():
 	print data_array
 
 # plot the histogram of the variable 'var'
-def plot_histogram(): 
+def plot_histogram(fileName): 
 	rootgrp = Dataset(fileName,'r')
 	dims = rootgrp.dimensions
 	vars = rootgrp.variables
