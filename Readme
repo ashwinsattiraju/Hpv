@@ -1,0 +1,11 @@
+Group Members:
+Ashwin Sattiraju - UIN # 677812907
+Gowdhaman Sadhasivam - UIN # 653746541
+
+
+How to run?
+
+1. Keep the input file and mainProgram.py file in same directory
+2. Enter below command in command prompt,
+
+python mainProgram.py -i tos_O1_2001-2002.nc
